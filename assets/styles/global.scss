@@ -1,0 +1,149 @@
+.btn-main {
+    padding: 13px 35px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(178.96deg, #FF8267 0.88%, #F83669 99.11%);
+    border-radius: 13px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn-second {
+    padding: 13px 35px;
+    font-size: 16px;
+    border: 1px solid #F83669;
+    color: #F83669;
+    text-align: center;
+    border-radius: 13px;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// .btn-second {
+//     width: 135px;
+//     height: 50px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 16px;
+//     background: linear-gradient(178.96deg, #FF8267 0.88%, #F83669 99.11%);
+//     border-radius: 13px;
+// }
+
+// .btn-second-inner {
+//     padding: 11px 32.5px;
+//     font-size: 16px;
+//     background: white;
+//     border-radius: 13px;
+// }
+
+
+.map {
+  width: 100vw;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  color: white;
+
+  &-row0 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 100px;
+  }
+
+  &-img {
+    width: 200px;
+  }
+
+  &-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+  }
+
+  &-item {
+    width: 270px;
+    padding: 26px 20px;
+    margin: 0px 20px 24px;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: rgba(222, 222, 222, 0.6);
+    
+  }
+
+  &-text1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  &-text2 {
+    margin-top: 8px;
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+}
+  
+@media( max-width: 1023px ){
+  
+  .map {
+    width: 100vw;
+    min-height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    color: white;
+  
+    &-row0 {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 30px;
+    }
+  
+    &-img {
+      width: 120px;
+    }
+  
+    &-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 30px 10px;
+    }
+  
+    &-item {
+      width: 190px;
+      padding: 16px 10px;
+      margin: 0px 10px 14px;
+      
+    }
+  
+    &-text1 {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  
+    &-text2 {
+      margin-top: 6px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+  
+}
