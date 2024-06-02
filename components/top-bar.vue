@@ -51,7 +51,7 @@ export default {
   top: 0px;
   width: 100vw;
   padding: 30px 0px;
-  background-color: #000019;
+  background-color: rgba(black, 0.2);
   z-index: 1;
 
   &-box {

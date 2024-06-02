@@ -3,45 +3,76 @@
   class="north">
     <div class="north-bg"
       :style="{
-        'backgroundImage' : 'url(' + require('@/assets/img/music/bg1.webp') + ')'
+        'backgroundImage' : 'url(' + require('@/assets/img/music/bg2.webp') + ')'
       }"
     ></div>
 
     <!-- 遊戲開始前 -->
 
     <div v-if="currentStatus == 'start'" class="north-start">
-      <div @click="startCountdown" class="north-start-btn">開始</div>
+      <div class="north-des-text">
+        進入網站後，可以點擊樂器聽不同北管樂器的聲音，自行演奏樂曲。演奏 30 秒後，會播放一段傳統北管音樂。請點選「開始演奏」，進入北管樂曲的世界。
+      </div>
+      <div @click="startCountdown" class="north-start-btn">開始演奏</div>
     </div>
 
     <!-- 遊戲中 -->
     <div v-if="currentStatus == 'game'" class="north-box">
-      <img @click="playSound1" class="north-music north-music1" src="@/assets/img/music/smallruo1.webp" alt="music">
-      <div  class="north-text">小鑼</div>
+      <div class="north-inner">
+        <div  class="north-text">小鑼</div>
+        <img @click="playRuo1" class="north-music north-music1" src="@/assets/img/music/smallruo1.webp" alt="music">
+        <img @click="playRuo2" class="north-music north-music1" src="@/assets/img/music/smallruo2.webp" alt="music">
+      </div>
 
-      <img @click="playSound2" class="north-music north-music2" src="@/assets/img/music/sona1.webp" alt="music">
-      <div  class="north-text">嗩吶</div>
+      <div class="north-inner">
+        <div  class="north-text">嗩吶</div>
+        <img @click="playSona1" class="north-music north-music2" src="@/assets/img/music/sona1.webp" alt="music">
+        <img @click="playSona2" class="north-music north-music2" src="@/assets/img/music/sona2.webp" alt="music">
+      </div>
+      
+      <div class="north-inner">
+        <div  class="north-text">堂鼓</div>
+        <img @click="playDrum1" class="north-music north-music3" src="@/assets/img/music/tamdrum1.webp" alt="music">
+        <img @click="playDrum2" class="north-music north-music3" src="@/assets/img/music/tamdrum2.webp" alt="music">
+      </div>
 
-      <img @click="playSound3" class="north-music north-music2" src="@/assets/img/music/tamdrum1.webp" alt="music">
-      <div  class="north-text">堂鼓</div>
+      <div class="north-inner">
+        <div  class="north-text">椰胡</div>
+        <img @click="playYehu1" class="north-music north-music4" src="@/assets/img/music/yehu1.webp" alt="music">
+        <img @click="playYehu2" class="north-music north-music4" src="@/assets/img/music/yehu2.webp" alt="music">
+      </div>
 
-      <img @click="playSound4" class="north-music north-music2" src="@/assets/img/music/yehu2.webp" alt="music">
-      <div  class="north-text">椰胡</div>
-
-      <audio ref="audioPlayer1" src="smallruo.m4a"></audio>
-      <audio ref="audioPlayer2" src="sona.m4a"></audio>
-      <audio ref="audioPlayer3" src="tamdrum.m4a"></audio>
-      <audio ref="audioPlayer4" src="yehu.m4a"></audio>
+      <audio ref="audioRuo1" src="smallruo1.m4a"></audio>
+      <audio ref="audioRuo2" src="smallruo2.mp3"></audio>
+      <audio ref="audioSona1" src="sona1.m4a"></audio>
+      <audio ref="audioSona2" src="sona2.mp3"></audio>
+      <audio ref="audioDrum1" src="tamdrum1.mp3"></audio>
+      <audio ref="audioDrum2" src="tamdrum2.wav"></audio>
+      <audio ref="audioYehu1" src="yehu1.mp3"></audio>
+      <audio ref="audioYehu2" src="yehu2.mp3"></audio>
       <img class="about-box-link" src="@/assets/img/social/link.png" alt="fb">
 
-      <div class="north-second">game：倒數 {{ countdown }} 秒</div>
+      
     </div>
+    <div v-if="currentStatus == 'game'" class="north-second">倒數 {{ countdown }} 秒</div>
 
-    <!-- 結束遊戲播放音樂，回到一開始 -->
+    <!-- 結束遊戲時，播放音樂，30 秒後回到一開始 -->
     
     <div v-if="currentStatus == 'end'" class="north-end">
-      <audio ref="audioPlayer4" src="yehu.m4a"></audio>
+      <div
+        v-if="!isClickLast"
+        @click="playCutPlay"
+        class="north-last-click"
+      >點選演奏</div>
+      <audio ref="cutPlay" src="cutPlay.mp3"></audio>
 
-      <div class="north-second">end：倒數 x 秒</div>
+      <div v-if="isClickLast"
+        class="north-des-text"
+      >
+        北管與南管音樂，是台灣傳統音樂，北管廣泛流傳於台灣民間社會，台灣北管音樂有許多派別，其中最大的派別為福祿派及西皮派，例如基隆聚樂社為北管的福祿派，使用的樂器包含嗩吶、單皮鼓、通鼓、大鑼、小鑼、鐃鈸、椰胡等。
+      </div>
+
+      <div class="north-second">倒數 {{ countdown }} 秒</div>
     </div>
 
   </div>
@@ -61,7 +92,8 @@ export default {
   data () {
     return {
       currentStatus: 'start',
-      countdown: 30,
+      countdown: 11,
+      isClickLast: false,
       // audioSrc: require('@/assets/plum.mp3')
     }
   },
@@ -75,21 +107,37 @@ export default {
     
   },
   methods: {
-    playSound1() {
-      this.$refs.audioPlayer1.play();
+    playRuo1() {
+      this.$refs.audioRuo1.play();
     },
-    playSound2() {
-      this.$refs.audioPlayer2.play();
+    playRuo2() {
+      this.$refs.audioRuo2.play();
     },
-    playSound3() {
-      this.$refs.audioPlayer3.play();
+    playSona1() {
+      this.$refs.audioSona1.play();
     },
-    playSound4() {
-      this.$refs.audioPlayer4.play();
+    playSona2() {
+      this.$refs.audioSona2.play();
+    },
+    playDrum1() {
+      this.$refs.audioDrum1.play();
+    },
+    playDrum2() {
+      this.$refs.audioDrum2.play();
+    },
+    playYehu1() {
+      this.$refs.audioYehu1.play();
+    },
+    playYehu2() {
+      this.$refs.audioYehu2.play();
+    },
+    playCutPlay() {
+      this.$refs.cutPlay.play()
+      this.isClickLast = true
     },
     startCountdown() {
       console.log('按鈕已點擊，30秒後將觸發下一個函數');
-      this.countdown = 30;
+      this.countdown = 11;
       this.currentStatus = 'game'
 
       if (this.interval) {
@@ -101,22 +149,24 @@ export default {
         this.countdown--;
         if (this.countdown <= 0) {
           clearInterval(this.interval);
-          this.nextFunction();
+          this.lastStep();
         }
       }, 1000); // 每秒更新一次
-
-      // 設定30秒的延遲保險措施
-      setTimeout(() => {
-        if (this.countdown > 0) {
-          clearInterval(this.interval);
-          this.nextFunction();
-        }
-      }, 30000); // 30000 毫秒即 30 秒
     },
-    nextFunction() {
+    lastStep() {
+      // 30秒後執行的操作
       this.currentStatus = 'end'
-      console.log('30秒後觸發的函數');
-      // 在這裡添加您希望在30秒後執行的操作
+      this.countdown = 11
+
+      // 更新倒數顯示
+      this.interval = setInterval(() => {
+        this.countdown--;
+        if (this.countdown <= 0) {
+          clearInterval(this.interval);
+          this.currentStatus = 'start'
+          this.isClickLast = false
+        }
+      }, 1000); // 每秒更新一次
     }
   },
   watch: {
@@ -130,6 +180,7 @@ export default {
 .north {
   min-height: 100vh;
   position: relative;
+  padding-top: 60px;
 
   &-bg {
     position: absolute;
@@ -145,62 +196,95 @@ export default {
     opacity: 0.3;
   }
 
+  &-start-btn {
+    width: 170px;
+    height: 80px;
+    margin: 50px auto 0px;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    background-color: pink;
+    border-radius: 13px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   &-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+
+  &-text {
+    width: 180px;
+    height: 80px;
+    margin: 20px 0px 30px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 24px;
+    color: black;
+    background-color: rgba(pink, 1);
   }
 
   &-music {
     width: 200px;
+    margin-bottom: 20px;
     cursor: pointer;
 
     &:hover {
-      opacity: 0.4;
-    }
-  }
-  
-  &-music1 {
-
-    &:hover {
-      transition: 0.3s;
-    }
-  }
-  
-  &-music2 {
-
-    &:hover {
-      transition: 0.3s;
-    }
-  }
-  
-  &-music3 {
-
-    &:hover {
-
-      transition: 0.3s;
-    }
-  }
-  
-  &-music4 {
-
-    &:hover {
-      transition: 0.3s;
+      opacity: 0.8;
     }
   }
 
-  &-text {
+  &-second {
+    width: 180px;
+    height: 80px;
+    margin: 30px auto 0px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 26px;
     color: black;
+    background-color: rgba(pink, 1);
   }
 
-  &-start-btn {
-    width: 200px;
-    height: 100px;
-    font-size: 30px;
+  &-last-click {
+    width: 220px;
+    height: 80px;
+    margin: 20px auto 0px;
+    font-size: 26px;
     color: white;
     text-align: center;
-    line-height: 100px;
-    background-color: blue;
+    line-height: 80px;
+    background-color: pink;
+    border-radius: 13px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-des-text {
+    width: 700px;
+    margin: 20px auto 0px;
+    padding: 10px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    line-height: 1.6;
+    background-color: pink;
+    border-radius: 13px;
   }
 
 }
