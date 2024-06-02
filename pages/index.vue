@@ -1,9 +1,5 @@
 <template>
-  <div class="index"
-    :style="{
-      'backgroundImage' : 'url(' + require('@/assets/img/base/a.jpg') + ')'
-    }"
-  >
+  <div class="index">
   </div>
 </template>
 
