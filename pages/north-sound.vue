@@ -62,26 +62,26 @@
     <div v-if="currentStatus == 'game'" class="north-box">
       <div class="north-inner">
         <div  class="north-text">小鑼</div>
-        <img @click="playRuo1" class="north-music north-music1" src="@/assets/img/music/smallruo1.webp" alt="music">
-        <img @click="playRuo2" class="north-music north-music1" src="@/assets/img/music/smallruo2.webp" alt="music">
+        <img @click="playRuo1" class="north-music north-music1" src="@/assets/img/music/smallruo.png" alt="music">
+        <img @click="playRuo2" class="north-music north-music1" src="@/assets/img/music/smallruo1.png" alt="music">
       </div>
 
       <div class="north-inner">
         <div class="north-text">嗩吶</div>
-        <img @click="playSona1" class="north-music north-music2" src="@/assets/img/music/sona1.webp" alt="music">
-        <img @click="playSona2" class="north-music north-music2" src="@/assets/img/music/sona2.webp" alt="music">
+        <img @click="playSona1" class="north-music north-music-big north-music2" src="@/assets/img/music/sona.png" alt="music">
+        <img @click="playSona2" class="north-music north-music2" src="@/assets/img/music/sona1.png" alt="music">
       </div>
       
       <div class="north-inner">
         <div  class="north-text">堂鼓</div>
-        <img @click="playDrum1" class="north-music north-music3" src="@/assets/img/music/tamdrum1.webp" alt="music">
-        <img @click="playDrum2" class="north-music north-music3" src="@/assets/img/music/tamdrum2.webp" alt="music">
+        <img @click="playDrum1" class="north-music north-music3" src="@/assets/img/music/tamdrum.png" alt="music">
+        <img @click="playDrum2" class="north-music north-music3" src="@/assets/img/music/tamdrum1.png" alt="music">
       </div>
 
       <div class="north-inner">
         <div  class="north-text">椰胡</div>
-        <img @click="playYehu1" class="north-music north-music4" src="@/assets/img/music/yehu1.webp" alt="music">
-        <img @click="playYehu2" class="north-music north-music4" src="@/assets/img/music/yehu2.webp" alt="music">
+        <img @click="playYehu1" class="north-music north-music-small north-music4" src="@/assets/img/music/yehu.png" alt="music">
+        <img @click="playYehu2" class="north-music north-music4" src="@/assets/img/music/yehu1.png" alt="music">
       </div>
 
       <audio ref="audioRuo1" src="smallruo1.m4a"></audio>
@@ -133,7 +133,7 @@ export default {
   },
   data () {
     return {
-      currentStatus: 'start',
+      currentStatus: 'game',
       countdown: 11,
       isClickLast: false,
       currentCard: 1,
@@ -324,7 +324,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
   }
 
   &-inner {
@@ -352,6 +351,15 @@ export default {
     &:hover {
       opacity: 0.8;
     }
+  }
+
+  &-music-small {
+    width: 110px;
+  }
+
+  &-music-big {
+    width: 280px;
+    margin-bottom: 40px;
   }
 
   &-second {
