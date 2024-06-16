@@ -13,7 +13,49 @@
       <div class="north-des-text">
         進入網站後，可以點擊樂器聽不同北管樂器的聲音，自行演奏樂曲。演奏 30 秒後，會播放一段傳統北管音樂。請點選「開始演奏」，進入北管樂曲的世界。
       </div>
-      <div @click="startCountdown" class="north-start-btn">開始演奏</div>
+      <div @click="inialPlay" class="north-start-btn">背景音樂</div>
+      <div @click="startCard" class="north-start-btn">開始演奏</div>
+
+      <audio ref="fullMusic" src="full-music.mp3"></audio>
+    </div>
+
+    <!-- 圖 + 卡 -->
+
+    <div v-if="currentStatus == 'card'" class="north-card">
+    
+      <div v-if="currentCard == 1" class="north-card-box">
+        <img class="north-card-img" src="@/assets/img/music/ns.png" alt="music">
+        <div class="north-card-row">
+          <div class="north-card-desc">北管與南管音樂，是台灣傳統音樂。</div>
+          <div @click="currentCard = 2" class="north-card-btn">下一頁</div>
+        </div>
+      </div>
+
+      <div v-if="currentCard == 2" class="north-card-box">
+        <img class="north-card-img" src="@/assets/img/music/group-music.png" alt="music">
+        <div class="north-card-row">
+          <div class="north-card-desc">北管廣泛流傳於台灣民間社會，台灣北管音樂有許多派別，其中最大的派別為福祿派及西皮派。</div>
+          <div @click="currentCard = 3" class="north-card-btn">下一頁</div>
+        </div>
+      </div>
+
+      <div v-if="currentCard == 3" class="north-card-box">
+        <img class="north-card-img" src="@/assets/img/music/keelung-group.png" alt="music">
+        <div class="north-card-row">
+          <div class="north-card-desc">例如基隆聚樂社為北管的福祿派。</div>
+          <div @click="currentCard = 4" class="north-card-btn">下一頁</div>
+        </div>
+      </div>
+
+      <div v-if="currentCard == 4" class="north-card-box">
+        <img class="north-card-img" src="@/assets/img/music/instrument.png" alt="music">
+        <div class="north-card-row">
+          <div class="north-card-desc">使用的樂器包含嗩吶、單皮鼓、通鼓、大鑼、小鑼、鐃鈸、椰胡等。</div>
+          <div @click="startCountdown" class="north-card-btn">開始遊戲</div>
+        </div>
+      </div>
+
+      <audio ref="fullMusic2" src="full-music.mp3"></audio>
     </div>
 
     <!-- 遊戲中 -->
@@ -25,7 +67,7 @@
       </div>
 
       <div class="north-inner">
-        <div  class="north-text">嗩吶</div>
+        <div class="north-text">嗩吶</div>
         <img @click="playSona1" class="north-music north-music2" src="@/assets/img/music/sona1.webp" alt="music">
         <img @click="playSona2" class="north-music north-music2" src="@/assets/img/music/sona2.webp" alt="music">
       </div>
@@ -66,7 +108,7 @@
       >點選演奏</div>
       <audio ref="cutPlay" src="cutPlay.mp3"></audio>
 
-      <div v-if="isClickLast"
+      <div
         class="north-des-text"
       >
         北管與南管音樂，是台灣傳統音樂，北管廣泛流傳於台灣民間社會，台灣北管音樂有許多派別，其中最大的派別為福祿派及西皮派，例如基隆聚樂社為北管的福祿派，使用的樂器包含嗩吶、單皮鼓、通鼓、大鑼、小鑼、鐃鈸、椰胡等。
@@ -94,11 +136,13 @@ export default {
       currentStatus: 'start',
       countdown: 11,
       isClickLast: false,
+      currentCard: 1,
       // audioSrc: require('@/assets/plum.mp3')
     }
   },
   async mounted () {
-
+    
+    
   },
   destroyed () {
     
@@ -135,10 +179,23 @@ export default {
       this.$refs.cutPlay.play()
       this.isClickLast = true
     },
+    inialPlay() {
+      setTimeout(() => {
+        this.$refs.fullMusic.play();
+      }, 1000);
+    },
+    startCard() {
+      this.currentStatus = 'card'
+      setTimeout(() => {
+        this.$refs.fullMusic2.play();
+      }, 1000);
+
+    },
     startCountdown() {
       console.log('按鈕已點擊，30秒後將觸發下一個函數');
       this.countdown = 11;
       this.currentStatus = 'game'
+      this.currentCard = 1
 
       if (this.interval) {
         clearInterval(this.interval);
@@ -165,6 +222,7 @@ export default {
           clearInterval(this.interval);
           this.currentStatus = 'start'
           this.isClickLast = false
+          this.$refs.fullMusic.play();
         }
       }, 1000); // 每秒更新一次
     }
@@ -212,6 +270,55 @@ export default {
       opacity: 0.8;
     }
   }
+
+  // 圖 + 卡
+
+  &-card {
+
+    &-box {
+      padding: 0px 0px 20px;
+    }
+
+    &-img {
+      display: flex;
+      margin: auto;
+    }
+
+    &-row {
+      width: 80%;
+      margin: 50px auto 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-desc {
+      padding: 20px;
+      width: 400px;
+      margin: 0px 0px 0px;
+      text-align: center;
+      font-size: 24px;
+      color: black;
+      background-color: rgba(pink, 1);
+    }
+
+    &-btn {
+      padding: 12px;
+      margin: 0px auto 0px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      background-color: pink;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  // 遊戲中
 
   &-box {
     display: flex;
