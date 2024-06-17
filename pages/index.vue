@@ -40,27 +40,27 @@
       <img class="index-special-img" src="@/assets/img/index/special.png" alt="music">
       <div class="index-special-hint">EXHIBITION</div>
       <div class="index-special-head">互動裝置</div>
-      <div class="index-special-desc">互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字。</div>
+      <div class="index-special-desc">展區使用大量互動裝置，有畫畫、有翻牌、有手作；讓民眾可以由「鬼」的視角出發，穿梭在展場間，藉由互動的模式體驗各項祭儀，並從中認識中元祭。</div>
 
       <img class="index-special-img" src="@/assets/img/index/special.png" alt="music">
       <div class="index-special-hint">EXHIBITION</div>
       <div class="index-special-head">北管比拼</div>
-      <div class="index-special-desc">互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字。</div>
+      <div class="index-special-desc">本次展覽運用科技裝置，讓看展的孩童與大人，認識北管音樂的比拼文化，並可以透過觸控畫面，體驗創作屬於自己的北管音樂，以及認識北管樂器</div>
 
       <img class="index-special-img" src="@/assets/img/index/special.png" alt="music">
       <div class="index-special-hint">EXHIBITION</div>
-      <div class="index-special-head">觀賞水燈頭</div>
-      <div class="index-special-desc">互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字。</div>
+      <div class="index-special-head">近距離看水燈頭</div>
+      <div class="index-special-desc">本次展覽把一座水燈頭搬進會場啦！除了了解放水燈的儀式歷程，更能近距離親眼欣賞水燈頭的細緻工藝，以及每座水燈頭所乘載的故事。</div>
 
       <img class="index-special-img" src="@/assets/img/index/special.png" alt="music">
       <div class="index-special-hint">EXHIBITION</div>
-      <div class="index-special-head">共創米標</div>
-      <div class="index-special-desc">互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字。</div>
+      <div class="index-special-head">共創米雕</div>
+      <div class="index-special-desc">藉由米雕共創的形式帶領學生認識「看桌」文化。「看桌」是鷄籠中元祭的重要元素。本次由藝師進入校園，帶領學生用麵粉、牲醴雕製成各種魚蝦鳥獸、民間故事和吉祥圖案等，除了供民眾欣賞特殊的藝術形式。也將學生參與米雕創作的作品展出。</div>
 
       <img class="index-special-img" src="@/assets/img/index/special.png" alt="music">
       <div class="index-special-hint">EXHIBITION</div>
       <div class="index-special-head">鬼視角認識中元祭</div>
-      <div class="index-special-desc">互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字，互動裝置的說明文字。</div>
+      <div class="index-special-desc">透過特別設計的「以鬼的視角感受中元祭」，讓民眾以「好兄弟」的立場，探索與體驗鷄籠中元祭的各項傳統儀式與活動。藉由獨特的體驗方式，讓人更深入理解祭祀背後的故事與文化價值。來感受一下，作為「好兄弟」參與這個重要節慶的感覺吧！</div>
     </div>
 
     <!-- 15 科儀 -->

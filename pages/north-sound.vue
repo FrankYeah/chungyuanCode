@@ -16,7 +16,7 @@
       <div @click="inialPlay" class="north-start-btn">背景音樂</div>
       <div @click="startCard" class="north-start-btn">開始演奏</div>
 
-      <audio ref="fullMusic" src="full-music.mp3"></audio>
+      <audio ref="fullMusic" loop src="full-music.mp3"></audio>
     </div>
 
     <!-- 圖 + 卡 -->
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <audio ref="fullMusic2" src="full-music.mp3"></audio>
+      <audio ref="fullMusic2" loop src="full-music.mp3"></audio>
     </div>
 
     <!-- 遊戲中 -->
@@ -133,7 +133,7 @@ export default {
   },
   data () {
     return {
-      currentStatus: 'game',
+      currentStatus: 'start',
       countdown: 11,
       isClickLast: false,
       currentCard: 1,
