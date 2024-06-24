@@ -60,6 +60,8 @@
 
     <!-- 遊戲中 -->
     <div v-if="currentStatus == 'game'" class="north-box">
+      <!-- 點點看，這些北管樂器是什麼聲音呢？
+      點選畫面上的北管樂器，聽聽它們的聲音，也可以自行演奏樂曲喔！ -->
       <div class="north-inner">
         <div  class="north-text">小鑼</div>
         <img @click="playRuo1" class="north-music north-music1" src="@/assets/img/music/smallruo.png" alt="music">
