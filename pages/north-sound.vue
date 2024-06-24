@@ -11,10 +11,10 @@
 
     <div v-if="currentStatus == 'start'" class="north-start">
       <div class="north-des-text">
-        進入網站後，可以點擊樂器聽不同北管樂器的聲音，自行演奏樂曲。演奏 30 秒後，會播放一段傳統北管音樂。請點選「開始演奏」，進入北管樂曲的世界。
+        點擊「認識北管」後，會有四張圖文，搭配音樂，帶你認識台灣的北管文化。最後，還可以實際體驗北管的樂器聲響唷！
       </div>
-      <div @click="inialPlay" class="north-start-btn">背景音樂</div>
-      <div @click="startCard" class="north-start-btn">開始演奏</div>
+      <div @click="inialPlay" class="north-start-btn">音樂</div>
+      <div @click="startCard" class="north-start-btn">認識北管</div>
 
       <audio ref="fullMusic" loop src="full-music.mp3"></audio>
     </div>
@@ -24,33 +24,40 @@
     <div v-if="currentStatus == 'card'" class="north-card">
     
       <div v-if="currentCard == 1" class="north-card-box">
-        <img class="north-card-img" src="@/assets/img/music/ns.png" alt="music">
+        <img class="north-card-img" src="@/assets/img/music/music1.jpg" alt="music">
         <div class="north-card-row">
-          <div class="north-card-desc">北管與南管音樂，是台灣傳統音樂。</div>
+          <div class="north-card-desc">北管與南管音樂，是台灣傳統音樂，北管廣泛流傳於台灣民間社會。</div>
           <div @click="currentCard = 2" class="north-card-btn">下一頁</div>
         </div>
       </div>
 
       <div v-if="currentCard == 2" class="north-card-box">
-        <img class="north-card-img" src="@/assets/img/music/group-music.png" alt="music">
+        <img class="north-card-img" src="@/assets/img/music/music2.jpg" alt="music">
         <div class="north-card-row">
-          <div class="north-card-desc">北管廣泛流傳於台灣民間社會，台灣北管音樂有許多派別，其中最大的派別為福祿派及西皮派。</div>
+          <div class="north-card-desc">台灣北管音樂有許多派別，其中最大的派別為福祿派及西皮派。</div>
           <div @click="currentCard = 3" class="north-card-btn">下一頁</div>
         </div>
       </div>
 
       <div v-if="currentCard == 3" class="north-card-box">
-        <img class="north-card-img" src="@/assets/img/music/keelung-group.png" alt="music">
+        <img class="north-card-img" src="@/assets/img/music/music3.jpg" alt="music">
         <div class="north-card-row">
-          <div class="north-card-desc">例如基隆聚樂社為北管的福祿派。</div>
+          <div class="north-card-desc">例如基隆聚樂社為北管的福祿派，得意堂則為西皮派。</div>
           <div @click="currentCard = 4" class="north-card-btn">下一頁</div>
         </div>
       </div>
 
       <div v-if="currentCard == 4" class="north-card-box">
-        <img class="north-card-img" src="@/assets/img/music/instrument.png" alt="music">
+        <img class="north-card-img" src="@/assets/img/music/music4.jpg" alt="music">
         <div class="north-card-row">
           <div class="north-card-desc">使用的樂器包含嗩吶、單皮鼓、通鼓、大鑼、小鑼、鐃鈸、椰胡等。</div>
+          <div @click="currentCard = 5" class="north-card-btn">最終頁</div>
+        </div>
+      </div>
+
+      <div v-if="currentCard == 5" class="north-card-box">
+        <div class="north-card-row">
+          <div class="north-card-desc">接下來，會讓你「玩」北管樂器，點擊聽聽他們發出的聲音，演奏吧！</div>
           <div @click="startCountdown" class="north-card-btn">開始遊戲</div>
         </div>
       </div>
@@ -113,7 +120,7 @@
       <div
         class="north-des-text"
       >
-        北管與南管音樂，是台灣傳統音樂，北管廣泛流傳於台灣民間社會，台灣北管音樂有許多派別，其中最大的派別為福祿派及西皮派，例如基隆聚樂社為北管的福祿派，使用的樂器包含嗩吶、單皮鼓、通鼓、大鑼、小鑼、鐃鈸、椰胡等。
+        台灣各地的北管都曾發生西皮和福祿派系對立的場面，其中也包含基隆；兩派爭端大多比拼音量、服飾、旗幟和技藝，在爭鬥中也促進了彼此技藝的進步；在 1912 年至 1941 年之間，兩派人在比拼過程，經常發生流血事件，而今發展成雙方禮讓的「交陣」儀式，展現文化與價值觀的反轉。
       </div>
 
       <div class="north-second">倒數 {{ countdown }} 秒</div>
@@ -276,6 +283,7 @@ export default {
   // 圖 + 卡
 
   &-card {
+    padding-top: 40px;
 
     &-box {
       padding: 0px 0px 20px;
@@ -284,6 +292,7 @@ export default {
     &-img {
       display: flex;
       margin: auto;
+      width: 700px;
     }
 
     &-row {
