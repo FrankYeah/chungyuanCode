@@ -21,7 +21,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'og:title'  , property: 'og:title'  , content: '鬼朋友度中元'},
-      { hid: 'og:image' , property: 'og:image' , content: 'icon.jpg'},
+      { hid: 'og:image' , property: 'og:image' , content: 'icon.png'},
       { hid: 'og:type' , property: 'og:type' , content: 'website'},
       // { hid: 'og:url' , property: 'og:url' , content: ''},
       { hid: 'description', name: 'description', content: '鬼朋友度中元' },
