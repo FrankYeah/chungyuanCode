@@ -142,7 +142,7 @@ export default {
   },
   data () {
     return {
-      currentStatus: 'end',
+      currentStatus: 'start',
       countdown: 11,
       isClickLast: false,
       currentCard: 1,
