@@ -505,7 +505,7 @@ export default {
 
   &-activity {
     position: relative;
-    padding: 30px 0px 60px;
+    padding: 60px 0px 60px;
 
     &-head {
       text-align: center;
@@ -550,7 +550,7 @@ export default {
   }
     
   &-festival {
-    padding: 30px 0px 30px;
+    padding: 60px 0px 30px;
     background-color: #faee00;
     
     &-header {
@@ -623,12 +623,13 @@ export default {
 
     &-box {
       // height: 60px;
-      // padding-right: 40px;
+      justify-content: center;
+      padding-right: 0px;
     }
     
     &-text {
-      // margin-left: 24px;
-      // font-size: 24px;
+      margin-left: 8px;
+      font-size: 18px;
     }
 
   }
@@ -636,43 +637,45 @@ export default {
   &-banner {
     // max-width: 1000px;
     // width: 100%;
-    // min-height: 100vh;
+    width: 320px;
+    min-height: 560px;
     // margin: 0px auto;
     // padding: 0px 0px 0px;
     
     &-banner {
-      top: 180px;
-      right: 10px;
+      top: 230px;
+      left: 0px;
       width: 320px;
     }
     
     &-temple {
-      top: 362px;
-      right: 62px;
-      width: 300px;
+      top: 350px;
+      left: 18px;
+      width: 286px;
     }
     
     &-lantern {
-      top: 301px;
-      left: 10px;
-      width: 50px;
+      display: none;
+      // top: 101px;
+      // left: 10px;
+      // width: 50px;
     }
     
     &-date {
-      top: 500px;
-      left: 84px;
-      width: 250px;
+      top: 50px;
+      left: 10px;
+      width: 150px;
     }
     
     &-ghost {
-      top: 184px;
+      top: 90px;
       left: 10px;
       width: 300px;
     }
   }
 
   &-desc {
-    padding: 20px 0px 40px;
+    padding: 20px 30px 40px;
 
     &-fire1 {
       display: none;
@@ -684,12 +687,15 @@ export default {
     
     &-intro {
       width: 100%;
+      font-size: 20px;
       // margin: 20px auto 0px;
     }
 
     &-head {
+      flex-wrap: wrap;
       width: 100%;
-      // margin: 100px auto 30px;
+      font-size: 20px;
+      margin: 50px auto 20px;
 
       & div:last-child {
         // margin-left: 14px;
@@ -698,6 +704,7 @@ export default {
     
     &-text {
       width: 100%;
+      font-size: 18px;
       // margin: 0px auto 10px;
       // font-size: 20px;
     }
@@ -705,37 +712,38 @@ export default {
   }
     
   &-special {
-    // padding: 0px 0px 50px;
+    padding: 0px 0px 40px;
     
     &-header {
-      // padding-top: 60px;
-      // font-size: 32px;
+      padding: 40px 0px 30px;
+      font-size: 24px;
     }
 
     &-inner {
-      width: 100%;
+      width: 320px;
       flex-direction: column;
       // margin: 0px auto 10px;
     }
     
     &-img {
       // width: 160px;
-      // margin: 20px 0px;
+      margin: 20px 0px;
     }
 
     &-img2 {
-      // margin: 20px 0px 0px 170px;
+      margin: 20px 0px;
     }
 
     &-box {
-      // margin-left: 30px;
+      margin-left: 0px;
     }
     
     &-head {
-      
+      text-align: center;
     }
     
     &-desc {
+      text-align: center;
       // margin: 14px 0px 0px;
     }
     
@@ -744,10 +752,10 @@ export default {
   // 活動
 
   &-activity {
-    // padding: 30px 0px 60px;
+    padding: 40px 0px 60px;
 
     &-head {
-      // font-size: 32px;
+      font-size: 24px;
     }
 
     &-lantain {
@@ -759,12 +767,14 @@ export default {
     }
 
     &-inner {
+      flex-direction: column;
+      align-items: center;
       width: 100%;
     }
 
     &-img {
-      // margin: 50px 0px 0px;
-      width: 280px;
+      margin: 30px 0px 0px;
+      width: 320px;
     }
 
     &-link {
@@ -773,14 +783,15 @@ export default {
   }
     
   &-festival {
-    // padding: 30px 0px 30px;
+    padding: 40px 0px 40px;
     
     &-header {
-      // font-size: 32px;
+      font-size: 24px;
     }
     
     &-box {
       width: 100%;
+      flex-direction: column;
       // margin: 20px auto 0px;
     }
 
@@ -789,29 +800,34 @@ export default {
     }
     
     &-img {
+      width: 250px;
       // width: 30%;
     }
     
     &-inner {
-      // margin: 0px 50px;
+      margin: 0px 30px;
     }
     
     &-head {
       // margin-top: 24px;
-      // font-size: 32px;
+      font-size: 24px;
     }
 
     &-span {
-      // margin: 0px 0px 0px 20px;
+      font-size: 18px;
+      margin: 0px 0px 0px 10px;
     }
     
     &-text {
-      // margin: 14px 0px 40px;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      line-height: 1.5;
+      margin: 14px 0px 20px;
     }
 
     &-arrow {
       // width: 50px;
-      // margin: 20px auto;
+      margin: 10px auto;
     }
 
     &-arrow-reverse {
