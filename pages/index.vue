@@ -362,41 +362,41 @@ export default {
     position: relative;
     max-width: 1000px;
     width: 100%;
-    min-height: 100vh;
+    min-height: 700px;
     margin: 0px auto;
     padding: 0px 0px 0px;
     
     &-banner {
       position: absolute;
-      top: 180px;
+      top: 110px;
       right: 10px;
-      width: 560px;
+      width: 620px;
     }
     
     &-temple {
       position: absolute;
-      top: 362px;
+      top: 292px;
       right: 62px;
       width: 452px;
     }
     
     &-lantern {
       position: absolute;
-      top: 301px;
+      top: 231px;
       left: 10px;
       width: 150px;
     }
     
     &-date {
       position: absolute;
-      top: 500px;
+      top: 430px;
       left: 84px;
       width: 350px;
     }
     
     &-ghost {
       position: absolute;
-      top: 184px;
+      top: 114px;
       left: 10px;
       width: 570px;
     }
@@ -408,9 +408,9 @@ export default {
 
     &-fire1 {
       position: absolute;
-      top: -200px;
+      top: -170px;
       left: 0px;
-      width: 400px;
+      width: 370px;
     }
 
     &-fire2 {
@@ -619,10 +619,10 @@ export default {
     
   &-header {
     // width: 100vw;
-    // height: 60px;
+    height: 50px;
 
     &-box {
-      // height: 60px;
+      height: 50px;
       justify-content: center;
       padding-right: 0px;
     }
@@ -662,9 +662,9 @@ export default {
     }
     
     &-date {
-      top: 50px;
+      top: 55px;
       left: 10px;
-      width: 150px;
+      width: 142px;
     }
     
     &-ghost {
