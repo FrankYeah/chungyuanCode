@@ -1,7 +1,7 @@
 <template>
 <!-- 色票 橘色 #f29600 黃色 #faee00 藍色 #193677 紫色 #3c245b -->
   <div class="index">
-    <!-- header：展覽看點、科儀 -->
+    <!-- header：展覽看點、祭儀 -->
     <div class="index-header">
       <div class="index-header-box">
         <nuxt-link to="/">
@@ -14,7 +14,7 @@
           <div class="index-header-text">活動資訊</div>
         </nuxt-link>
         <nuxt-link to="/#festival">
-          <div class="index-header-text">科儀</div>
+          <div class="index-header-text">祭儀</div>
         </nuxt-link>
       </div>
     </div>
@@ -33,6 +33,7 @@
     <!-- 展覽說明 -->
     <div class="index-desc">
       <img class="index-desc-fire1" src="@/assets/img/index/firework-pink1.png" alt="music">
+      <img class="index-desc-fire2" src="@/assets/img/index/firework-pink2.png" alt="music">
       <div class="index-desc-intro">
         每年農曆七月俗稱「鬼月」，傳說地府會讓「好兄弟」出來放暑假。「中元普度」是臺灣農曆七月重要的民俗活動，其中又以基隆的「鷄籠中元祭」最為著名。<br><br>
         基隆擁有豐富又多元的歷史，過去曾有許多國家的人來過基隆，因海難、疾病、戰爭、械鬥等原因去世。為了安撫這些鬼朋友，基隆人特別重視中元普度，發展出由十五個姓氏的宗親會輪流主普「鷄籠中元祭」，透過非常多的祭典儀式招待鬼朋友，至今已有 170 年歷史，展現基隆人的悲天憫人情懷。<br><br>
@@ -46,10 +47,9 @@
       <div class="index-desc-text">開放時間：週二至週日 09:00-17:00，週一固定休館，逢國定假日及連假照常開館，順延至次日休館。</div><br>
 
       <div class="index-desc-text">指導單位：基隆市政府</div>
-      <div class="index-desc-text">主辦單位：基隆市文化局</div>
+      <div class="index-desc-text">主辦單位：基隆市文化觀光局</div>
       <div class="index-desc-text">協辦單位：基隆市政府教育處</div>
       <div class="index-desc-text">執行團隊：雞籠怪奇</div>
-      <img class="index-desc-fire2" src="@/assets/img/index/firework-pink2.png" alt="music">
     </div>
 
     <!-- 展覽看點 -->
@@ -113,12 +113,12 @@
       </div>
     </div>
 
-    <!-- 15 科儀 -->
+    <!-- 15 祭儀 -->
     <div id="festival" class="index-festival">
-      <div class="index-festival-header">科儀</div>
+      <div class="index-festival-header">祭儀</div>
       
       <div class="index-festival-box">
-        <img class="index-festival-img" src="@/assets/img/index/2.png" alt="music">
+        <img class="index-festival-img" src="@/assets/img/index/15.png" alt="music">
         <div class="index-festival-inner">
           <div class="index-festival-head">開燈夜<span class="index-festival-span">六月二十九</span></div>
           <div class="index-festival-text">又稱「陰光照路」；在鬼門還沒開、鬼朋友還沒來到人間之前，我們就開始準備招待囉！每年「主普宗親會」會於農曆七月前一、二週在各主要街道懸掛平安燈。於農曆六月最後一日晚上子時，基隆各間陰廟（專門祭拜鬼朋友的廟）會點亮「普度公燈」，讓鬼朋友一來到人間就能看得清楚路，跟著燈籠走就能吃到普度。</div>
@@ -173,7 +173,7 @@
         <img class="index-festival-arrow" src="@/assets/img/icon/right-down.png" alt="icon">
       </nuxt-link>
       <div id="festival5" class="index-festival-box index-festival-box-reverse">
-        <img class="index-festival-img" src="@/assets/img/index/15.png" alt="music">
+        <img class="index-festival-img" src="@/assets/img/index/2.png" alt="music">
         <div class="index-festival-inner">
           <div class="index-festival-head">開燈放彩<span class="index-festival-span">七月十二</span></div>
           <div class="index-festival-text">主普壇是鬼朋友吃普度時的主要場所，也是鬼朋友在人間的臨時住所。農曆七月十二日晚上六點，道士會先施行法事灑淨，然後舉行點燈儀式，整座主普壇建築會變得非常明亮，佈滿五光十色的絢爛燈火，吸引鬼朋友前來接受普度供養。</div>
@@ -278,7 +278,15 @@
           <div class="index-festival-text">今年的中元祭活動圓滿結束後，由主普宗親會將「手爐」交接給明年主普的宗親會，代表交接工作職責，所有姓氏的代表都會觀禮，象徵任務傳承。</div>
         </div>
       </div>
+
+      <div class="index-festival-copyright">
+        <div class="index-festival-copyright-mail">klkuaiki@gmail.com</div>
+        <div class="index-festival-copyright-text">All Rights Reserved | Powered by 雞籠怪奇</div>
+      </div>
+
     </div>
+
+    
 
     <!-- <img class="index--img" src="@/assets/img/index/ns.png" alt="music"> -->
     <!-- <div class="index-"></div> -->
@@ -330,7 +338,7 @@ export default {
     left: 0px;
     width: 100vw;
     height: 60px;
-    background-color: rgba(grey, 0.1);
+    background-color: #193677;;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -347,8 +355,9 @@ export default {
     
     &-text {
       margin-left: 24px;
-      color: #193677;
+      color: white;
       font-size: 24px;
+      font-weight: bold;
       cursor: pointer;
 
       &:hover {
@@ -425,6 +434,7 @@ export default {
       width: 1000px;
       margin: 20px auto 0px;
       font-size: 24px;
+      font-weight: bold;
       letter-spacing: 1.5px;
       line-height: 1.5;
       color: #193677;
@@ -437,6 +447,7 @@ export default {
       margin: 100px auto 30px;
       color: #3c245b;
       font-size: 24px;
+      font-weight: bold;
 
       & div:last-child {
         margin-left: 14px;
@@ -448,6 +459,7 @@ export default {
       width: 1000px;
       margin: 0px auto 10px;
       font-size: 20px;
+      font-weight: bold;
       color: #3c245b;
     }
 
@@ -494,6 +506,7 @@ export default {
     &-desc {
       margin: 14px 0px 0px;
       font-size: 20px;
+      font-weight: bold;
       letter-spacing: 1.5px;
       line-height: 1.5;
       color: #faee00;
@@ -550,7 +563,7 @@ export default {
   }
     
   &-festival {
-    padding: 60px 0px 30px;
+    padding: 60px 0px 20px;
     background-color: #faee00;
     
     &-header {
@@ -594,6 +607,7 @@ export default {
     &-text {
       margin: 14px 0px 40px;
       font-size: 20px;
+      font-weight: bold;
       color: #3c245b;
     }
 
@@ -606,6 +620,21 @@ export default {
 
     &-arrow-reverse {
       transform: rotate(90deg);
+    }
+
+    &-copyright {
+      margin-top: 50px;
+      text-align: center;
+      color: #193677;
+
+      &-mail {
+
+      }
+
+      &-text {
+        padding: 10px 0px 0px;
+      }
+
     }
     
   }
@@ -715,7 +744,7 @@ export default {
     padding: 0px 0px 40px;
     
     &-header {
-      padding: 40px 0px 30px;
+      padding: 50px 0px 30px;
       font-size: 24px;
     }
 
@@ -752,7 +781,7 @@ export default {
   // 活動
 
   &-activity {
-    padding: 40px 0px 60px;
+    padding: 50px 0px 60px;
 
     &-head {
       font-size: 24px;
@@ -783,7 +812,7 @@ export default {
   }
     
   &-festival {
-    padding: 40px 0px 40px;
+    padding: 50px 0px 20px;
     
     &-header {
       font-size: 24px;

@@ -24,8 +24,8 @@ export default {
       { hid: 'og:image' , property: 'og:image' , content: 'icon.png'},
       { hid: 'og:type' , property: 'og:type' , content: 'website'},
       // { hid: 'og:url' , property: 'og:url' , content: ''},
-      { hid: 'description', name: 'description', content: '中元普度是臺灣傳統的民俗節日。每年農曆七月俗稱「鬼月」，傳說地府會開放，讓鬼朋友放暑假。' },
-      { hid: 'og:description' , property: 'og:description' , content: '中元普度是臺灣傳統的民俗節日。每年農曆七月俗稱「鬼月」，傳說地府會開放，讓鬼朋友放暑假。'},
+      { hid: 'description', name: 'description', content: '2024/8/8-29 基隆美術館M01' },
+      { hid: 'og:description' , property: 'og:description' , content: '2024/8/8-29 基隆美術館M01'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
