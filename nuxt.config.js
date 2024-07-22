@@ -11,6 +11,30 @@ export default {
     base: '/chungyuan/',
     // middleware: ['auth'],
   },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "example.com"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:"],
+      connectSrc: ["'self'"],
+      fontSrc: ["'self'", "https:"],
+      objectSrc: ["'none'"],
+      mediaSrc: ["'self'"],
+      frameSrc: ["'none'"],
+      upgradeInsecureRequests: [],
+    },
+  },
+  hsts: {
+    maxAge: 63072000, // 兩年
+    includeSubDomains: true,
+    preload: true,
+  },
+  noSniff: true,
+  frameguard: {
+    action: 'deny',
+  },
+  xssFilter: true,
   head: {
     titleTemplate: '%s',
     title: '鬼朋友度中元',

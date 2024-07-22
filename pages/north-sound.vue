@@ -1,64 +1,118 @@
 <template>
-  <div 
-  class="north">
-    <div class="north-bg"
-      :style="{
-        'backgroundImage' : 'url(' + require('@/assets/img/music/bg2.webp') + ')'
-      }"
-    ></div>
+  <div class="north">
+    <!-- :style="{
+      'backgroundImage' : 'url(' + require('@/assets/img/music/bg2.webp') + ')'
+    }" -->
+    <!-- <div @click="inialPlay" class="north-start-btn">音樂</div>
+    <div @click="startCard" class="north-start-btn">認識北管</div>
+    <audio ref="fullMusic" loop src="full-music.mp3"></audio> -->
 
     <!-- 遊戲開始前 -->
 
-    <div v-if="currentStatus == 'start'" class="north-start">
-      <div class="north-des-text">
-        點擊「認識北管」後，會有四張圖文，搭配音樂，帶你認識台灣的北管文化。最後，還可以實際體驗北管的樂器聲響唷！
+    <div v-if="currentStatus == 'start'" class="north-start north-bg"
+      :style="{
+        'backgroundImage' : 'url(' + require('@/assets/img/music2/bg1.png') + ')'
+      }"
+    >
+      <div class="north-start-text north-des-text">
+        帶你認識遊行陣頭的傳統音樂<br>
+        還可以實際體驗北管樂器喔!
       </div>
-      <div @click="inialPlay" class="north-start-btn">音樂</div>
-      <div @click="startCard" class="north-start-btn">認識北管</div>
-
-      <audio ref="fullMusic" loop src="full-music.mp3"></audio>
+      <img @click="startCard"
+        class="north-start-btn"
+        src="@/assets/img/music2/know.png"
+        alt="music"
+      >
     </div>
 
     <!-- 圖 + 卡 -->
 
     <div v-if="currentStatus == 'card'" class="north-card">
     
-      <div v-if="currentCard == 1" class="north-card-box">
+      <div v-if="currentCard == 1" class="north-card-box north-bg"
+        :style="{
+          'backgroundImage' : 'url(' + require('@/assets/img/music2/bg2.png') + ')'
+        }"
+      >
         <img class="north-card-img" src="@/assets/img/music/music1.jpg" alt="music">
         <div class="north-card-row">
-          <div class="north-card-desc">北管與南管音樂，是台灣傳統音樂，北管廣泛流傳於台灣民間社會。</div>
-          <div @click="currentCard = 2" class="north-card-btn">下一頁</div>
+          <div class="north-card-desc">北管與南管音樂，是台灣傳統音樂，<br>北管廣泛流傳於台灣民間社會。</div>
+          <!-- <div @click="currentCard = 2" class="north-card-btn">下一頁</div>  -->
+          <img @click="currentCard = 2"
+            class="north-card-btn"
+            src="@/assets/img/music2/arrow.png"
+            alt="music"
+          >
         </div>
       </div>
 
-      <div v-if="currentCard == 2" class="north-card-box">
-        <img class="north-card-img" src="@/assets/img/music/music2.jpg" alt="music">
+      <div v-if="currentCard == 2" class="north-card-box north-bg"
+        :style="{
+          'backgroundImage' : 'url(' + require('@/assets/img/music2/bg2.png') + ')'
+        }"
+      >
+        <img class="north-card-img" src="@/assets/img/music/music5.jpg" alt="music">
         <div class="north-card-row">
-          <div class="north-card-desc">台灣北管音樂有許多派別，其中最大的派別為福祿派及西皮派。</div>
-          <div @click="currentCard = 3" class="north-card-btn">下一頁</div>
+          <div class="north-card-desc">台灣北管音樂有許多派別，<br>其中最大的派別為福祿派及西皮派。<br>（圖 / 中華民國傳統民俗文化協會）</div>
+          <img @click="currentCard = 3"
+            class="north-card-btn"
+            src="@/assets/img/music2/arrow.png"
+            alt="music"
+          >
         </div>
       </div>
 
-      <div v-if="currentCard == 3" class="north-card-box">
-        <img class="north-card-img" src="@/assets/img/music/music3.jpg" alt="music">
-        <div class="north-card-row">
-          <div class="north-card-desc">例如基隆聚樂社為北管的福祿派，得意堂則為西皮派。</div>
-          <div @click="currentCard = 4" class="north-card-btn">下一頁</div>
-        </div>
-      </div>
-
-      <div v-if="currentCard == 4" class="north-card-box">
+      <div v-if="currentCard == 3" class="north-card-box north-bg"
+        :style="{
+          'backgroundImage' : 'url(' + require('@/assets/img/music2/bg2.png') + ')'
+        }"
+      >
         <img class="north-card-img" src="@/assets/img/music/music4.jpg" alt="music">
         <div class="north-card-row">
-          <div class="north-card-desc">使用的樂器包含嗩吶、單皮鼓、通鼓、大鑼、小鑼、鐃鈸、椰胡等。</div>
-          <div @click="currentCard = 5" class="north-card-btn">最終頁</div>
+          <div class="north-card-desc">例如基隆聚樂社為北管的福祿派，<br>得意堂則為西皮派。</div>
+          <img @click="currentCard = 4"
+            class="north-card-btn"
+            src="@/assets/img/music2/arrow.png"
+            alt="music"
+          >
         </div>
       </div>
 
-      <div v-if="currentCard == 5" class="north-card-box">
+      <div v-if="currentCard == 4" class="north-card-box north-bg"
+        :style="{
+          'backgroundImage' : 'url(' + require('@/assets/img/music2/bg2.png') + ')'
+        }"
+      >
+        <img class="north-card-img" src="@/assets/img/music/music6.jpg" alt="music">
         <div class="north-card-row">
-          <div class="north-card-desc">接下來，會讓你「玩」北管樂器，點擊聽聽他們發出的聲音，演奏吧！</div>
-          <div @click="startCountdown" class="north-card-btn">開始遊戲</div>
+          <div class="north-card-desc">使用的樂器包含嗩吶、單皮鼓、通鼓、<br>大鑼、小鑼、鐃鈸、椰胡等。<br>（圖 / 中華民國傳統民俗文化協會）</div>
+          <img @click="currentCard = 5"
+            class="north-card-btn"
+            src="@/assets/img/music2/arrow.png"
+            alt="music"
+          >
+        </div>
+      </div>
+
+      <div v-if="currentCard == 5" class="north-card-box north-bg"
+        :style="{
+          'backgroundImage' : 'url(' + require('@/assets/img/music2/bg3.png') + ')'
+        }"
+      >
+        <div class="north-card-row">
+          <div class="north-card-last-text">
+            北管與南管是臺灣傳統音樂，<br>而北管廣泛流傳於臺灣民間社會。<br>
+            臺灣北管音樂有許多派別，<br>其中最大的派別為西皮派及福祿派。<br>
+            例如基隆聚樂社為福祿派；<br>得意堂則為西皮派。<br>
+            北管使用的樂器包含嗩吶、單皮鼓、<br>通鼓、大鑼、小鑼、鐃鈸、椰胡等。<br>
+            這些北管樂器會發出什麼聲音呢？<br>
+            用手指頭點擊，試著演奏看看吧！
+          </div>
+          <img @click="startCountdown"
+            class="north-card-btn-last"
+            src="@/assets/img/music2/startplay.png"
+            alt="music"
+          >
         </div>
       </div>
 
@@ -66,32 +120,39 @@
     </div>
 
     <!-- 遊戲中 -->
-    <div v-if="currentStatus == 'game'" class="north-box">
-      <!-- 點點看，這些北管樂器是什麼聲音呢？
-      點選畫面上的北管樂器，聽聽它們的聲音，也可以自行演奏樂曲喔！ -->
+    <div v-if="currentStatus == 'game'" class="north-game north-bg"
+        :style="{
+          'backgroundImage' : 'url(' + require('@/assets/img/music2/bg3.png') + ')'
+        }"
+      >
+
+      <div v-if="currentStatus == 'game'" class="north-second">{{ countdown }}</div>
+
       <div class="north-inner">
-        <div  class="north-text">小鑼</div>
-        <img @click="playRuo1" class="north-music north-music1" src="@/assets/img/music/smallruo.png" alt="music">
-        <img @click="playRuo2" class="north-music north-music1" src="@/assets/img/music/smallruo1.png" alt="music">
+        <img class="north-music-icon" src="@/assets/img/music2/smallruo.png" alt="music">
+        <img @click="playRuo1" class="north-music" src="@/assets/img/music/smallruo.png" alt="music">
+        <img @click="playRuo2" class="north-music north-music-big" src="@/assets/img/music/smallruo1.png" alt="music">
       </div>
 
       <div class="north-inner">
-        <div class="north-text">嗩吶</div>
-        <img @click="playSona1" class="north-music north-music-big north-music2" src="@/assets/img/music/sona.png" alt="music">
-        <img @click="playSona2" class="north-music north-music2" src="@/assets/img/music/sona1.png" alt="music">
+        <img class="north-music-icon" src="@/assets/img/music2/sona.png" alt="music">
+        <img @click="playSona1" class="north-music north-music-big" src="@/assets/img/music/sona.png" alt="music">
+        <img @click="playSona2" class="north-music" src="@/assets/img/music/sona1.png" alt="music">
       </div>
       
       <div class="north-inner">
-        <div  class="north-text">堂鼓</div>
-        <img @click="playDrum1" class="north-music north-music3" src="@/assets/img/music/tamdrum.png" alt="music">
-        <img @click="playDrum2" class="north-music north-music3" src="@/assets/img/music/tamdrum1.png" alt="music">
+        <img class="north-music-icon" src="@/assets/img/music2/tamtam.png" alt="music">
+        <img @click="playDrum1" class="north-music north-music-big" src="@/assets/img/music/tamdrum.png" alt="music">
+        <img @click="playDrum2" class="north-music north-music-big" src="@/assets/img/music/tamdrum1.png" alt="music">
       </div>
 
       <div class="north-inner">
-        <div  class="north-text">椰胡</div>
-        <img @click="playYehu1" class="north-music north-music-small north-music4" src="@/assets/img/music/yehu.png" alt="music">
-        <img @click="playYehu2" class="north-music north-music4" src="@/assets/img/music/yehu1.png" alt="music">
+        <img class="north-music-icon" src="@/assets/img/music2/yehu.png" alt="music">
+        <img @click="playYehu1" class="north-music" src="@/assets/img/music/yehu.png" alt="music">
+        <img @click="playYehu2" class="north-music north-music-big" src="@/assets/img/music/yehu1.png" alt="music">
       </div>
+
+      <div  class="north-text">點點看，這些北管樂器是什麼聲音呢？</div>
 
       <audio ref="audioRuo1" src="smallruo1.m4a"></audio>
       <audio ref="audioRuo2" src="smallruo2.mp3"></audio>
@@ -101,29 +162,43 @@
       <audio ref="audioDrum2" src="tamdrum2.wav"></audio>
       <audio ref="audioYehu1" src="yehu1.mp3"></audio>
       <audio ref="audioYehu2" src="yehu2.mp3"></audio>
-      <img class="about-box-link" src="@/assets/img/social/link.png" alt="fb">
-
-      
+      <!-- <img class="about-box-link" src="@/assets/img/social/link.png" alt="fb"> -->
     </div>
-    <div v-if="currentStatus == 'game'" class="north-second">倒數 {{ countdown }} 秒</div>
-
+    
     <!-- 結束遊戲時，播放音樂，30 秒後回到一開始 -->
     
-    <div v-if="currentStatus == 'end'" class="north-end">
-      <div
+    <div v-if="currentStatus == 'end'" class="north-end north-bg"
+        :style="{
+          'backgroundImage' : 'url(' + require('@/assets/img/music2/bg4.png') + ')'
+        }"
+      >
+      <!-- <div
         v-if="!isClickLast"
         @click="playCutPlay"
         class="north-last-click"
       >點選演奏</div>
-      <audio ref="cutPlay" src="cutPlay.mp3"></audio>
+      <audio ref="cutPlay" src="cutPlay.mp3"></audio> -->
 
       <div
-        class="north-des-text"
+        class="north-des-text north-end-text"
       >
-        台灣各地的北管都曾發生西皮和福祿派系對立的場面，其中也包含基隆；兩派爭端大多比拼音量、服飾、旗幟和技藝，在爭鬥中也促進了彼此技藝的進步；在 1912 年至 1941 年之間，兩派人在比拼過程，經常發生流血事件，而今發展成雙方禮讓的「交陣」儀式，展現文化與價值觀的反轉。
+        臺灣早期各地的北管都曾發生西皮和福祿派系的衝突，<br>
+        其中也包含基隆，兩派經常發生流血事件。<br><br>
+
+      後來為了避免傷亡，在地方仕紳及政府的協調下，<br>
+      改以「拼陣頭代替打破頭」的方式，<br>
+      用文化競技來避免派系衝突，<br>
+      後來又發展成迎斗燈那天，雙方禮讓的「交陣」儀式，<br>
+      展現文化與價値觀的反轉。
       </div>
 
-      <div class="north-second">倒數 {{ countdown }} 秒</div>
+      <img @click="currentStatus = 'start'"
+        class="north-card-btn-last"
+        src="@/assets/img/music2/back.png"
+        alt="music"
+      >
+
+      <!-- <div class="north-second">倒數 {{ countdown }} 秒</div> -->
     </div>
 
   </div>
@@ -247,32 +322,41 @@ export default {
 .north {
   min-height: 100vh;
   position: relative;
-  padding-top: 60px;
+  padding-top: 0px;
+  background-color: #193677;
 
   &-bg {
-    position: absolute;
-    top: 0px;
-    left: 0px;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position-x: center;
     background-position-y: center;
     z-index: -1;
-    opacity: 0.3;
+  }
+
+  &-des-text {
+    width: 700px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 1.3px;
+  }
+
+  &-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-start-text {
+    padding-top: 500px;
   }
 
   &-start-btn {
     width: 170px;
-    height: 80px;
-    margin: 50px auto 0px;
-    font-size: 26px;
-    color: white;
-    text-align: center;
-    line-height: 80px;
-    background-color: pink;
-    border-radius: 13px;
+    margin: 10px 0px 0px;
     cursor: pointer;
 
     &:hover {
@@ -283,44 +367,58 @@ export default {
   // 圖 + 卡
 
   &-card {
-    padding-top: 40px;
-
+    
     &-box {
-      padding: 0px 0px 20px;
+      // padding: 40px 0px 20px;
     }
 
     &-img {
       display: flex;
       margin: auto;
-      width: 700px;
+      padding-top: 400px;
+      width: 494px;
     }
 
     &-row {
-      width: 80%;
-      margin: 50px auto 0px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-top: 20px;
     }
 
     &-desc {
-      padding: 20px;
-      width: 400px;
-      margin: 0px 0px 0px;
-      text-align: center;
+      width: 700px;
       font-size: 24px;
-      color: black;
-      background-color: rgba(pink, 1);
+      color: white;
+      text-align: center;
+      line-height: 1.6;
+      letter-spacing: 1.3px;
+    }
+
+    &-last-text {
+      width: 700px;
+      padding: 300px 0px 0px;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+      line-height: 1.6;
+      letter-spacing: 1.3px;
     }
 
     &-btn {
-      padding: 12px;
-      margin: 0px auto 0px;
-      font-size: 20px;
-      color: white;
-      text-align: center;
-      background-color: pink;
-      border-radius: 6px;
+      width: 80px;
+      margin: 50px 0px 40px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &-btn-last {
+      width: 180px;
+      margin: 50px 0px 40px;
       cursor: pointer;
 
       &:hover {
@@ -331,32 +429,32 @@ export default {
 
   // 遊戲中
 
-  &-box {
+  &-game {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-second {
+    padding: 20px 0px 400px 450px;
+    font-size: 40px;
+    color: white;
   }
 
   &-inner {
+    width: 500px;
     display: flex;
-    flex-direction: column;
-    margin-right: 20px;
+    align-items: center;
   }
 
-  &-text {
-    width: 180px;
-    height: 80px;
-    margin: 20px 0px 30px;
-    line-height: 80px;
-    text-align: center;
-    font-size: 24px;
-    color: black;
-    background-color: rgba(pink, 1);
+  &-music-icon {
+    width: 120px;
+    // margin: 50px 0px 40px;
   }
 
   &-music {
-    width: 200px;
-    margin-bottom: 20px;
+    width: 140px;
+    margin-right: 30px;
     cursor: pointer;
 
     &:hover {
@@ -365,52 +463,31 @@ export default {
   }
 
   &-music-small {
-    width: 110px;
+    width: 00px;
   }
 
   &-music-big {
-    width: 280px;
-    margin-bottom: 40px;
+    width: 200px;
   }
 
-  &-second {
-    width: 180px;
-    height: 80px;
-    margin: 30px auto 0px;
-    line-height: 80px;
-    text-align: center;
-    font-size: 26px;
-    color: black;
-    background-color: rgba(pink, 1);
-  }
-
-  &-last-click {
-    width: 220px;
-    height: 80px;
-    margin: 20px auto 0px;
-    font-size: 26px;
+  &-text {
+    width: 700px;
+    padding: 20px 0px 50px;
+    font-size: 24px;
     color: white;
     text-align: center;
-    line-height: 80px;
-    background-color: pink;
-    border-radius: 13px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.8;
-    }
+    line-height: 1.6;
+    letter-spacing: 1.3px;
   }
 
-  &-des-text {
-    width: 700px;
-    margin: 20px auto 0px;
-    padding: 10px;
-    font-size: 24px;
-    color: black;
-    text-align: center;
-    line-height: 1.6;
-    background-color: pink;
-    border-radius: 13px;
+  &-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-end-text {
+    padding: 760px 0px 0px;
   }
 
 }
