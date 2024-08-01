@@ -14,6 +14,7 @@
         'backgroundImage' : 'url(' + require('@/assets/img/music2/bg1.png') + ')'
       }"
     >
+      <div class="north-start-empty"></div>
       <div class="north-start-text north-des-text">
         帶你認識遊行陣頭的傳統音樂<br>
         還可以實際體驗北管樂器喔!
@@ -152,7 +153,7 @@
         <img @click="playYehu2" class="north-music north-music-big" src="@/assets/img/music/yehu1.png" alt="music">
       </div>
 
-      <div  class="north-text">點點看，這些北管樂器是什麼聲音呢？</div>
+      <div  class="north-text">點點看，<br>這些北管樂器是什麼聲音呢？</div>
 
       <audio ref="audioRuo1" src="smallruo1.m4a"></audio>
       <audio ref="audioRuo2" src="smallruo2.mp3"></audio>
@@ -182,13 +183,17 @@
       <div
         class="north-des-text north-end-text"
       >
-        臺灣早期各地的北管都曾發生西皮和福祿派系的衝突，<br>
-        其中也包含基隆，兩派經常發生流血事件。<br><br>
+        臺灣早期各地的北管，<br>
+        都曾發生西皮和福祿派系的衝突，<br>
+        其中也包含基隆，<br>
+        兩派經常發生流血事件。<br><br>
 
-      後來為了避免傷亡，在地方仕紳及政府的協調下，<br>
+      後來為了避免傷亡，<br>
+      在地方仕紳及政府的協調下，<br>
       改以「拼陣頭代替打破頭」的方式，<br>
       用文化競技來避免派系衝突，<br>
-      後來又發展成迎斗燈那天，雙方禮讓的「交陣」儀式，<br>
+      後來又發展成迎斗燈那天，<br>
+      雙方禮讓的「交陣」儀式，<br>
       展現文化與價値觀的反轉。
       </div>
 
@@ -217,7 +222,7 @@ export default {
   },
   data () {
     return {
-      currentStatus: 'start',
+      currentStatus: 'game',
       countdown: 11,
       isClickLast: false,
       currentCard: 1,
@@ -350,12 +355,18 @@ export default {
     align-items: center;
   }
 
+  &-start-empty {
+    width: 100px;
+    height: 100px;
+  }
+
   &-start-text {
-    padding-top: 500px;
+    padding-top: 1300px;
+    font-size: 50px;
   }
 
   &-start-btn {
-    width: 170px;
+    width: 500px;
     margin: 10px 0px 0px;
     cursor: pointer;
 
@@ -375,8 +386,8 @@ export default {
     &-img {
       display: flex;
       margin: auto;
-      padding-top: 400px;
-      width: 494px;
+      padding-top: 700px;
+      width: 700px;
     }
 
     &-row {
@@ -388,8 +399,8 @@ export default {
     }
 
     &-desc {
-      width: 700px;
-      font-size: 24px;
+      width: 800px;
+      font-size: 40px;
       color: white;
       text-align: center;
       line-height: 1.6;
@@ -397,9 +408,9 @@ export default {
     }
 
     &-last-text {
-      width: 700px;
-      padding: 300px 0px 0px;
-      font-size: 24px;
+      width: 800px;
+      padding: 700px 0px 0px;
+      font-size: 40px;
       color: white;
       text-align: center;
       line-height: 1.6;
@@ -407,8 +418,8 @@ export default {
     }
 
     &-btn {
-      width: 80px;
-      margin: 50px 0px 40px;
+      width: 200px;
+      margin: 0px 0px 40px;
       cursor: pointer;
 
       &:hover {
@@ -417,8 +428,8 @@ export default {
     }
 
     &-btn-last {
-      width: 180px;
-      margin: 50px 0px 40px;
+      width: 400px;
+      margin: 0px 0px 40px;
       cursor: pointer;
 
       &:hover {
@@ -437,23 +448,24 @@ export default {
 
   &-second {
     padding: 20px 0px 400px 450px;
-    font-size: 40px;
+    font-size: 100px;
     color: white;
   }
 
   &-inner {
-    width: 500px;
+    width: 700px;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   &-music-icon {
-    width: 120px;
+    width: 220px;
     // margin: 50px 0px 40px;
   }
 
   &-music {
-    width: 140px;
+    width: 240px;
     margin-right: 30px;
     cursor: pointer;
 
@@ -463,17 +475,17 @@ export default {
   }
 
   &-music-small {
-    width: 00px;
+    width: 0px;
   }
 
   &-music-big {
-    width: 200px;
+    width: 300px;
   }
 
   &-text {
     width: 700px;
     padding: 20px 0px 50px;
-    font-size: 24px;
+    font-size: 46px;
     color: white;
     text-align: center;
     line-height: 1.6;
@@ -487,7 +499,8 @@ export default {
   }
 
   &-end-text {
-    padding: 760px 0px 0px;
+    padding: 1200px 0px 0px;
+    font-size: 40px;
   }
 
 }
