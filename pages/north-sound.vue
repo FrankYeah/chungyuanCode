@@ -140,7 +140,7 @@
 
       <div class="north-inner">
         <img class="north-music-icon" src="@/assets/img/music2/sona.png" alt="music">
-        <img @click="playSona1" class="north-music north-music-big" src="@/assets/img/music/sona.png" alt="music">
+        <img @click="playSona1" class="north-music north-music-big north-music-biger" src="@/assets/img/music/sona.png" alt="music">
         <img @click="playSona2" class="north-music" src="@/assets/img/music/sona1.png" alt="music">
       </div>
       
@@ -152,7 +152,7 @@
 
       <div class="north-inner">
         <img class="north-music-icon" src="@/assets/img/music2/yehu.png" alt="music">
-        <img @click="playYehu1" class="north-music" src="@/assets/img/music/yehu.png" alt="music">
+        <img @click="playYehu1" class="north-music north-music-smaller" src="@/assets/img/music/yehu.png" alt="music">
         <img @click="playYehu2" class="north-music north-music-big" src="@/assets/img/music/yehu1.png" alt="music">
       </div>
 
@@ -186,7 +186,7 @@
       <div
         class="north-des-text north-end-text"
       >
-        臺灣早期各地的北管，都曾發生西皮和福祿派系的衝突，其中也包含基隆，兩派經常發生流血事件。<br>
+        臺灣早期各地的北管，都曾發生西皮和福祿派系的衝突，其中也包含基隆，兩派經常發生流血事件。<br><br>
 
       後來為了避免傷亡，在地方仕紳及政府的協調下，改以「拼陣頭代替打破頭」的方式，用文化競技來避免派系衝突，後來又發展成迎斗燈那天，雙方禮讓的「交陣」儀式，展現文化與價値觀的反轉。
       </div>
@@ -216,8 +216,8 @@ export default {
   },
   data () {
     return {
-      currentStatus: 'end',
-      countdown: 11,
+      currentStatus: 'start',
+      countdown: 30,
       isClickLast: false,
       currentCard: 1,
       // audioSrc: require('@/assets/plum.mp3')
@@ -276,7 +276,7 @@ export default {
     },
     startCountdown() {
       console.log('按鈕已點擊，30秒後將觸發下一個函數');
-      this.countdown = 11;
+      this.countdown = 30;
       this.currentStatus = 'game'
       this.currentCard = 1
 
@@ -296,7 +296,7 @@ export default {
     lastStep() {
       // 30秒後執行的操作
       this.currentStatus = 'end'
-      this.countdown = 11
+      this.countdown = 30
 
       // 更新倒數顯示
       this.interval = setInterval(() => {
@@ -405,7 +405,7 @@ export default {
 
     &-last-text {
       width: 800px;
-      margin: 20px auto 0px;
+      margin: 0px auto 0px;
       padding: 700px 0px 230px;
       font-size: 40px;
       color: white;
@@ -466,7 +466,7 @@ export default {
   }
 
   &-music {
-    width: 184px;
+    width: 194px;
     margin-right: 30px;
     cursor: pointer;
 
@@ -479,9 +479,19 @@ export default {
     width: 0px;
   }
 
+  &-music-smaller {
+    width: 119px;
+    margin: 0px 43px 0px 63px;
+  }
+
   &-music-big {
     width: 220px;
     margin-right: 0px;
+  }
+
+  &-music-biger {
+    width: 300px;
+    margin: 0px 0px 0px -78px;
   }
 
   &-text {
@@ -504,6 +514,7 @@ export default {
     width: 1000px;
     padding: 1204px 0px 0px;
     font-size: 34px;
+    text-align: left;
   }
 
 }
