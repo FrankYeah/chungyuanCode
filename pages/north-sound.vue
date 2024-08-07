@@ -123,7 +123,7 @@
       <audio ref="fullMusic2" loop src="full-music.mp3"></audio>
     </div>
 
-    <!-- 遊戲中 -->
+    <!-- 遊戲中 1747px -->
     <div v-if="currentStatus == 'game'" class="north-game north-bg"
       :style="{
         'backgroundImage' : 'url(' + require('@/assets/img/music2/bg3.png') + ')'
@@ -449,8 +449,8 @@ export default {
   }
 
   &-second {
-    padding: 20px 0px 400px 450px;
-    font-size: 100px;
+    padding: 220px 0px 70px 650px;
+    font-size: 200px;
     color: white;
   }
 
