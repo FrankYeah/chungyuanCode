@@ -54,7 +54,7 @@
       >
         <div class="north-card-inner">
           <img class="north-card-img" src="@/assets/img/music/music5.jpg" alt="music">
-          <div class="north-card-desc">台灣北管音樂有許多派別，<br>其中最大的派別為福祿派及西皮派。<br>（圖 / 中華民國傳統民俗文化協會）</div>
+          <div class="north-card-desc"><span style="font-size: 26px;">（圖 / 中華民國傳統民俗文化協會）</span><br>台灣北管音樂有許多派別，<br>其中最大的派別為福祿派及西皮派。</div>
         </div>
         <img @click="currentCard = 3"
           class="north-card-btn"
@@ -88,7 +88,7 @@
       >
           <div class="north-card-inner">
             <img class="north-card-img" src="@/assets/img/music/music6.jpg" alt="music">
-            <div class="north-card-desc">使用的樂器包含嗩吶、單皮鼓、通鼓、<br>大鑼、小鑼、鐃鈸、椰胡等。<br>（圖 / 中華民國傳統民俗文化協會）</div>
+            <div class="north-card-desc"><span style="font-size: 26px;">（圖 / 中華民國傳統民俗文化協會）</span><br>使用的樂器包含嗩吶、單皮鼓、通鼓、<br>大鑼、小鑼、鐃鈸、椰胡等。</div>
           </div>
           <img @click="currentCard = 5"
             class="north-card-btn"
@@ -105,11 +105,11 @@
       >
       
           <div class="north-card-last-text">
-            北管與南管是臺灣傳統音樂，<br>而北管廣泛流傳於臺灣民間社會。<br>
+            <!-- 北管與南管是臺灣傳統音樂，<br>而北管廣泛流傳於臺灣民間社會。<br>
             臺灣北管音樂有許多派別，<br>其中最大的派別為西皮派及福祿派。<br>
             例如基隆聚樂社為福祿派；<br>得意堂則為西皮派。<br>
-            北管使用的樂器包含嗩吶、單皮鼓、<br>通鼓、大鑼、小鑼、鐃鈸、椰胡等。<br>
-            這些北管樂器會發出什麼聲音呢？<br>
+            北管使用的樂器包含嗩吶、單皮鼓、<br>通鼓、大鑼、小鑼、鐃鈸、椰胡等。<br> -->
+            北管樂器會發出什麼聲音呢？<br>
             用手指頭點擊，試著演奏看看吧！
           </div>
           <img @click="startCountdown"
@@ -158,12 +158,12 @@
 
       <div  class="north-text">點點看，<br>這些北管樂器是什麼聲音呢？</div>
 
-      <audio ref="audioRuo1" src="smallruo1.m4a"></audio>
+      <audio ref="audioRuo1" src="smallruo1.mp3"></audio>
       <audio ref="audioRuo2" src="smallruo2.mp3"></audio>
-      <audio ref="audioSona1" src="sona1.m4a"></audio>
+      <audio ref="audioSona1" src="sona1.mp3"></audio>
       <audio ref="audioSona2" src="sona2.mp3"></audio>
       <audio ref="audioDrum1" src="tamdrum1.mp3"></audio>
-      <audio ref="audioDrum2" src="tamdrum2.wav"></audio>
+      <audio ref="audioDrum2" src="tamdrum2.mp3"></audio>
       <audio ref="audioYehu1" src="yehu1.mp3"></audio>
       <audio ref="audioYehu2" src="yehu2.mp3"></audio>
       <!-- <img class="about-box-link" src="@/assets/img/social/link.png" alt="fb"> -->
@@ -405,8 +405,9 @@ export default {
 
     &-last-text {
       width: 800px;
+      height: 440px;
       margin: 0px auto 0px;
-      padding: 700px 0px 230px;
+      padding: 900px 0px 230px;
       font-size: 40px;
       color: white;
       text-align: center;
