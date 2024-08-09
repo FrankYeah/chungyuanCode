@@ -54,7 +54,7 @@
       >
         <div class="north-card-inner">
           <img class="north-card-img" src="@/assets/img/music/music5.jpg" alt="music">
-          <div class="north-card-desc"><span style="font-size: 26px;">（圖 / 中華民國傳統民俗文化協會）</span><br>台灣北管音樂有許多派別，<br>其中最大的派別為福祿派及西皮派。</div>
+          <div class="north-card-desc"><span style="font-size: 26px;">（圖 / 中華民國傳統民俗文化協會）</span><br>台灣北管音樂有許多派別，<br>其中最大的派別為福路派及西皮派。</div>
         </div>
         <img @click="currentCard = 3"
           class="north-card-btn"
@@ -71,7 +71,7 @@
       >
           <div class="north-card-inner">
             <img class="north-card-img" src="@/assets/img/music/music4.jpg" alt="music">
-            <div class="north-card-desc">例如基隆聚樂社為北管的福祿派，<br>得意堂則為西皮派。</div>
+            <div class="north-card-desc">例如基隆聚樂社為北管的福路派，<br>得意堂則為西皮派。</div>
           </div>
           <img @click="currentCard = 4"
             class="north-card-btn"
@@ -106,8 +106,8 @@
       
           <div class="north-card-last-text">
             <!-- 北管與南管是臺灣傳統音樂，<br>而北管廣泛流傳於臺灣民間社會。<br>
-            臺灣北管音樂有許多派別，<br>其中最大的派別為西皮派及福祿派。<br>
-            例如基隆聚樂社為福祿派；<br>得意堂則為西皮派。<br>
+            臺灣北管音樂有許多派別，<br>其中最大的派別為西皮派及福路派。<br>
+            例如基隆聚樂社為福路派；<br>得意堂則為西皮派。<br>
             北管使用的樂器包含嗩吶、單皮鼓、<br>通鼓、大鑼、小鑼、鐃鈸、椰胡等。<br> -->
             北管樂器會發出什麼聲音呢？<br>
             用手指頭點擊，試著演奏看看吧！
@@ -186,7 +186,7 @@
       <div
         class="north-des-text north-end-text"
       >
-        臺灣早期各地的北管，都曾發生西皮和福祿派系的衝突，其中也包含基隆，兩派經常發生流血事件。<br><br>
+        臺灣早期各地的北管，都曾發生西皮和福路派系的衝突，其中也包含基隆，兩派經常發生流血事件。<br><br>
 
       後來為了避免傷亡，在地方仕紳及政府的協調下，改以「拼陣頭代替打破頭」的方式，用文化競技來避免派系衝突，後來又發展成迎斗燈那天，雙方禮讓的「交陣」儀式，展現文化與價値觀的反轉。
       </div>

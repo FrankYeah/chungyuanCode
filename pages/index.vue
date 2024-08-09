@@ -76,7 +76,7 @@
         <img class="index-special-img" src="@/assets/img/index/mini.png" alt="music">
         <div class="index-special-box">
           <div class="index-special-head">「有點迷你」看桌米雕共創</div>
-          <div class="index-special-desc">謝源章老師進入校園，帶領學生製作的縮小版創意米雕。</div>
+          <div class="index-special-desc">謝源張老師進入校園，帶領學生製作的縮小版創意米雕。</div>
         </div>
       </div>
 
